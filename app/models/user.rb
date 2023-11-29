@@ -31,4 +31,14 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  # Validations
+  validate :valid_email_domain, on: :create
+
+  # Validate if is a avansoft employee
+  def valid_email_domain
+    unless email.present? && email.ends_with?('@avantsoft.com.br')
+      errors.add(:email, 'must be from avantsoft.com.br domain')
+    end
+  end
 end

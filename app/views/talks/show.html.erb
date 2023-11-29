@@ -4,7 +4,7 @@
 
 <section id="content">
   <div class="container">
-    <div class="row" style='margin-left: -280px;'>
+    <div class="row" style='margin-left: -200px;'>
       <div class="col-md-9">
         <div class="video">
           <iframe 
@@ -20,7 +20,7 @@
           <div class='panel panel-default'>
             <div class='panel-body'>
               <h2 class='bold'><%= @talk.title %></h2>
-              <p><%= @talk.description %></p>
+              <p><%= truncate(@talk.description, length: 145) %></p>
             </div>
           </div>
         </div>
