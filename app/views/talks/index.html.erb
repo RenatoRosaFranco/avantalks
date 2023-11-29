@@ -1,0 +1,32 @@
+<%= provide :title, 'Tech Talks' %>
+<%= provide :description, 'Assista as ultimas tech talks da Avantsoft' %>
+<%= provide :keywords, '#avantsoft #tech #talk #technology #development #software' %>
+
+<section id="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+
+        <div class='row'>
+          <div class="col-md-12" style='margin-left: -35px;'>
+            <%= link_to new_talk_path, 
+            class: 'btn btn-primary btn-lg top avantBtn' do %>
+              Adicionar Talk
+            <% end %>
+          </div>
+        </div>
+        <br />
+
+        <div class="row" style='margin-top: 0px; margin-left: -50px;'>
+          <%= render @talks %>
+        </div>
+
+        <div class='row'>
+          <div class="col-md-12 text-center">
+            <%= paginate(@talks) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

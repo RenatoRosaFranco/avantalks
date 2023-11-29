@@ -1,0 +1,31 @@
+<%= link_to talk_path(talk), class: 'remove-link-decoration' do %>
+  <div class="col-md-3">
+    <div class='panel panel-default no-border'>
+      <div class='panel-body no-border'>
+        <div class="thumbnail">
+        </div>
+        <div class="caption">
+          <h4 class='bold'><%= truncate(talk.title, length: 25) %></h4>
+          <p>
+            <%= image_tag('logo.jpeg', class: 'sm-logo') %>
+            Avantsoft <i class="fa-solid fa-circle-check bold"></i>
+          </p>
+          <ul class="list-unstyled list-inline">
+            <li>
+              <p>
+                <i class="fa-solid fa-circle-user"></i>
+                <%= talk.speaker %>
+              </p>
+            </li>
+            <li>
+              <p>
+                <i class="fa-solid fa-calendar"></i>
+                <%= to_date(talk.created_at) %>
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,58 @@
+<%= provide :title, @talk.title %>
+<%= provide :description, truncate(@talk.description, length: 145) %>
+<%= provide :keywords, '' %>
+
+<section id="content">
+  <div class="container">
+    <div class="row" style='margin-left: -280px;'>
+      <div class="col-md-9">
+        <div class="video">
+          <iframe 
+            src="<%= @talk.youtube_embedded_url %>" 
+            title="YouTube video player" 
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+            encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>  
+          </iframe>
+        </div>
+
+        <div class="about">
+          <div class='panel panel-default'>
+            <div class='panel-body'>
+              <h2 class='bold'><%= @talk.title %></h2>
+              <p><%= @talk.description %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id='sidebar-right'>
+  <div class="col-md-12">
+    <% @talks.each do |talk| %>
+      <%= link_to talk_path(talk), class: 'remove-link-decoration' do %>
+        <div class="panel panel-default talk-block">
+          <div class="panel-body">
+              <div class="media">
+                <div class="media-left pull-left">
+                   <div class="thumbnail"></div>
+                </div>
+                <div class="media-body">
+                  <!-- Media object content -->
+                  <h5 class="media-heading"><%= talk.title %></h5>
+                  <p style="font-size: 14px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+                  
+                  <div class="author text-right">
+                    <%= image_tag('logo.jpeg', class: 'sm-logo') %>
+                    Avantsoft <i class="fa-solid fa-circle-check bold"></i>
+                  </div>
+                </div>
+              </div>
+          </div>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</section>

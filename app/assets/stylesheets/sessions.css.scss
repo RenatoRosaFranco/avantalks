@@ -1,0 +1,41 @@
+.registrations
+{
+  margin-top: 80px !important;
+}
+
+.sessions, .registrations
+{
+  background: linear-gradient(to right, #00b572, #00a6c6);
+  position: relative;
+  margin-top: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .logo
+  {
+    position: relative;
+    width: 104px;
+    height: 104px;
+    border-radius: 104px;
+    background-color: #FFF;
+    border: 1px solid #EEE;
+    padding: 2px;
+  }
+
+  .main
+  {
+    margin-left: 140px;
+  }
+
+  .sidebar, .search-section
+  {
+    display: none;
+  }
+
+  #footer
+  {
+    margin-top: 20px;
+    color: #FFF;
+  }
+}

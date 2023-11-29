@@ -2,9 +2,13 @@
 
 Rails.application.routes.draw do
 
+  # Authentication
   devise_for :users
+
+  root to: 'talks#index'
+
   # Application
-  namespace :dashboard do
+  scope :dashboard do
     resources :talks
   end
 end

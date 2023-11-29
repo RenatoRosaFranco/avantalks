@@ -6,6 +6,8 @@
 #
 #  id                     :integer          not null, primary key
 #  admin                  :boolean
+#  confirmed              :boolean          default(FALSE)
+#  confirmed_at           :date
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
 #  name                   :string
@@ -23,13 +25,28 @@
 FactoryBot.define do
   factory :user do
     name { FFaker::Name.name }
-    email { FFaker::Name.name.downcase.gsub(/\s/, '-') }
+    email { name.downcase.gsub(/\s/, '-').concat('@avantsoft.com.br') }
     password { 'test123' }
     password_confirmation { 'test123' }
+    confirmed { false }
+    confirmed_at { nil }
     admin { false }
 
     trait :admin do
+      name { "Renato Franco" }
+      email { "renato.franco@avantsoft.com.br" }
       admin { true }
+    end
+
+    trait :confirmed do
+      confirmed { true }
+      confirmed_at { Date.today }
+    end
+
+    trait :with_talks do
+      after(:create) do |user, evaluator|
+        create_list(:talk, rand(3..5), user: user)
+      end
     end
   end
 end

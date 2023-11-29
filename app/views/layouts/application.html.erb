@@ -1,15 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
   <head>
-    <title>Avantalks</title>
+    <title><%= yield :title %> | Avantalks</title>
+    <meta charset="UTF-8">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/5165849ba2.js" crossorigin="anonymous"></script>
+    <style type="text/css"><%= yield :stylesheet %></style>
+    <script type="text/javascript"><%= yield :javascript %></script>
   </head>
+  <body class="<%= controller.controller_name %>" data-spy="scroll">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-2 col-md-2 sidebar">
+          <div class="sidebar sidebar-sticky">
+            <%= image_tag('logo.jpeg', class: 'logo') %>
 
-  <body>
-    <%= yield %>
+            <ul class="nav nav-pills nav-stacked">
+              <li>
+                <%= link_to '' do %>
+                  <i class="fa-regular fa-paper-plane ico"></i>
+                  Envie sua Talk
+                <% end %>
+              </li>
+              <li role='presentation'>
+                <%= link_to talks_path do %>
+                  <i class="fa-solid fa-house ico "></i>
+                  Talks
+                <% end %>
+              </li>
+              <li role='presentation'>
+                <%= link_to edit_user_registration_path do %>
+                  <i class="fa-solid fa-circle-user ico "></i>
+                  Profile
+                <% end %>
+              </li>
+              <li role='presentation'>
+                <%= link_to destroy_user_session_path, 
+                method: :delete do %>
+                  <i class="fa-solid fa-power-off ico "></i>
+                  Logout
+                <% end %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3 col-md-3 search-section text-center">
+        <input type="text" placeholder="Search..." 
+        class="form-control">
+      </div>
+
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <%= yield %>
+        <%= render partial: 'shared/footer' %>
+      </div>
+    </div>
   </body>
 </html>

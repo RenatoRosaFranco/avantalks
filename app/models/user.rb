@@ -6,6 +6,8 @@
 #
 #  id                     :integer          not null, primary key
 #  admin                  :boolean
+#  confirmed              :boolean          default(FALSE)
+#  confirmed_at           :date
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
 #  name                   :string
@@ -22,6 +24,7 @@
 #
 class User < ApplicationRecord
 
+  # Relationships
   has_many :talks, dependent: :destroy
 
   # Include default devise modules. Others available are:

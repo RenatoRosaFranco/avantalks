@@ -1,0 +1,198 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import 'bootstrap';
+
+body
+{
+  position: relative;
+  font-size: 16px;
+}
+
+.bold
+{
+  position: relative;
+  font-weight: bold;
+}
+
+.uppercase
+{
+  position: relative;
+  text-transform: uppercase;
+}
+
+.full-width
+{
+  position: relative;
+  width: 100%;
+}
+
+.remove-link-decoration
+{
+  position: relative;
+  color: #000;
+}
+
+.remember
+{
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.no-border
+{
+  position: relative;
+  border: 0px !important;
+}
+
+.sidebar {
+  //background-color: #f8f9fa; /* Light gray background color for the sidebar */
+  border-right: 1px solid #e1e1e1; /* Border color on the right side of the sidebar */
+
+  a
+  {
+    position: relative;
+    color: #000;
+  }
+
+}
+
+.sidebar-sticky {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  border-right: 1px solid #f8f9fa;
+  background-color: #f8f9fa;
+  left: 0px;
+  width: 12%;
+  padding-top: 20px; /* Padding at the top of the sidebar */
+
+  .logo
+  {
+    position: relative;
+    width: 84px;
+    height: 84px;
+    border-radius: 84px;
+    margin-left: 30%;
+    margin-top: -80px;
+    margin-bottom: 40px;
+    border: 1px solid #CCC;
+  }
+
+  .ico
+  {
+    position: relative;
+    color: #FFF;
+    background: linear-gradient(to right, #00b572, #00a6c6);
+    border-radius: 25px;
+    margin-right: 5px;
+    padding: 5px;
+  }
+}
+
+.nav-pills.nav-stacked > li {
+  font-size: 18px;
+  border-bottom: 1px solid #e1e1e1;
+  padding-top: 0px;
+  margin-bottom: 10px;
+}
+
+.nav-pills.nav-stacked > li:last-child {
+  border-bottom: none; /* Remove border for the last item in the sidebar */
+}
+
+.search-section {
+  display: none;
+  background: linear-gradient(to right, #00b572, #00a6c6);
+  width: 100%;
+  padding-top: 20px;
+  margin-top: -1px;
+  margin-left: 234px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+.search-section input {
+  box-sizing: border-box;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.main {
+  position: relative;
+  top: -1px;
+  left: -42px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  overflow-x: hidden;
+}
+
+.avantForm
+{
+  position: relative;
+  padding: 20px;
+
+  input[type=text]
+  {
+    position: relative;
+    background-color: #f2f2f2;
+    height: 44px;
+  }
+
+  input[type=url]
+  {
+    position: relative;
+    background-color: #f2f2f2;
+    height: 44px;
+  }
+
+  textarea
+  {
+    position: relative;
+    background-color: #f2f2f2;
+    height: 140px;
+  }
+
+  input[type=submit]
+  {
+    position: relative;
+    width: 180px;
+  }
+}
+
+.avantBtn
+{
+  position: relative;
+  border: 1px solid #01b093;
+  background-color: #01b093;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: normal;
+  transition: 0.5s;
+  color: #FFF;
+
+  &.over, &:hover
+  {
+    background-color: #028a74;
+    border: 1px solid #028a74;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+}

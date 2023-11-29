@@ -6,7 +6,6 @@ ruby '2.7.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.8', '>= 5.2.8.1'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -32,9 +31,12 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'friendly_id'
 gem 'kaminari'
+gem 'pundit'
 gem 'kaminari-bootstrap'
 gem 'jquery-rails'
 gem 'bootstrap3-rails'
+gem 'ransack'
+gem 'pg'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -45,6 +47,7 @@ group :development, :test do
   gem 'annotate'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
+  gem 'sqlite3'
   gem 'awesome_print'
   gem 'ffaker'
   gem 'rails_best_practices'

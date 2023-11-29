@@ -1,0 +1,35 @@
+<div class='col-md-8 col-md-offset-2'>
+  <div class='panel panel-default'>
+    <div class='panel-body'>
+      <%= form_for(talk, html: { class: 'avantForm' }) do |f| %>
+        
+        <div class="field">
+          <%= f.label :title, 'Titulo' %>
+          <%= f.text_field :title, class: 'form-control', required: 'required',
+          placeholder: 'Digite o titulo', autocomplete: 'off' %>
+        </div>
+
+        <div class="field">
+          <%= f.label :description, 'Descrição' %>
+          <%= f.text_area :description, class: 'form-control', required: 'required',
+          placeholder: 'Digite a descrição', autocomplete: 'off' %>
+        </div>
+
+        <div class="field">
+          <%= f.label :speaker, 'Palestrante' %>
+          <%= f.text_field :speaker, class: 'form-control', required: 'required',
+          placeholder: 'Digite nome do palestrante', autocomplete: 'off' %>
+        </div>
+
+        <div class="field">
+          <%= f.label :youtube_embedded_url, 'Youtube URL' %>
+          <%= f.url_field :youtube_embedded_url, class: 'form-control', required: 'required', placeholder: 'Digite a URL', autocomplete: 'off' %>
+        </div>
+
+        <div class="actions text-center"><br />
+          <%= f.submit nil, class: 'btn btn-primary btn-lg top avantBtn' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
